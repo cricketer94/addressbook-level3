@@ -12,6 +12,7 @@ import seedu.addressbook.data.AddressBook;
 import seedu.addressbook.data.person.*;
 import seedu.addressbook.data.tag.Tag;
 import seedu.addressbook.data.tag.UniqueTagList;
+import seedu.addressbook.parser.Parser;
 import seedu.addressbook.storage.StorageFile;
 
 import java.util.*;
@@ -79,6 +80,9 @@ public class LogicTest {
 
         //Execute the command
         CommandResult r = logic.execute(inputCommand);
+        
+        //taking in a Command object to check the isMutating value
+        Command command= new Parser().parseCommand(inputCommand);
 
         //Confirm the result contains the right data
         assertEquals(expectedMessage, r.feedbackToUser);
@@ -90,7 +94,12 @@ public class LogicTest {
         //Confirm the state of data is as expected
         assertEquals(expectedAddressBook, addressBook);
         assertEquals(lastShownList, logic.getLastShownList());
-        assertEquals(addressBook, saveFile.load());
+        
+        //We now only test content of save file only if data happens to be mutated
+        if(command.isMutating()){
+        	assertEquals(addressBook, saveFile.load());
+        }
+        
     }
 
 
