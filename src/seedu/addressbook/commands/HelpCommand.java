@@ -1,6 +1,5 @@
 package seedu.addressbook.commands;
 
-
 /**
  * Shows help instructions.
  */
@@ -8,20 +7,16 @@ public class HelpCommand extends Command {
 
     public static final String COMMAND_WORD = "help";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ":\n" +"Shows program usage instructions.\n\t"
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ":\n" + "Shows program usage instructions.\n\t"
             + "Example: " + COMMAND_WORD;
 
-    public static final String MESSAGE_ALL_USAGES = AddCommand.MESSAGE_USAGE
-            + "\n" + DeleteCommand.MESSAGE_USAGE
-            + "\n" + ClearCommand.MESSAGE_USAGE
-            + "\n" + FindCommand.MESSAGE_USAGE
-            + "\n" + ListCommand.MESSAGE_USAGE
-            + "\n" + ViewCommand.MESSAGE_USAGE
-            + "\n" + ViewAllCommand.MESSAGE_USAGE
-            + "\n" + HelpCommand.MESSAGE_USAGE
-            + "\n" + ExitCommand.MESSAGE_USAGE;
+    public static final String MESSAGE_ALL_USAGES = AddCommand.MESSAGE_USAGE + "\n" + DeleteCommand.MESSAGE_USAGE + "\n"
+            + ClearCommand.MESSAGE_USAGE + "\n" + FindCommand.MESSAGE_USAGE + "\n" + ListCommand.MESSAGE_USAGE + "\n"
+            + ViewCommand.MESSAGE_USAGE + "\n" + ViewAllCommand.MESSAGE_USAGE + "\n" + HelpCommand.MESSAGE_USAGE + "\n"
+            + ExitCommand.MESSAGE_USAGE;
 
-    public HelpCommand() {}
+    public HelpCommand() {
+    }
 
     @Override
     public CommandResult execute() {
@@ -30,13 +25,13 @@ public class HelpCommand extends Command {
 
     @Override
     public boolean isMutable() {
-        // TODO Auto-generated method stub
+
         return false;
     }
 
     @Override
     public String getExecutedAction() {
-        // TODO Auto-generated method stub
+
         return null;
     }
 }
